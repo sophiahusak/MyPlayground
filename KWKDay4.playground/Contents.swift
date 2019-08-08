@@ -32,3 +32,9 @@ for num in 1...100 {
     }
 }
 
+
+//Actions and Outlets
+
+//Create an action whenever you need to send something from the storyboard to your code -- message being sent from your hand to your brain
+
+//Outlets you send to the view screen -- brain telling your hand to move from the stove
