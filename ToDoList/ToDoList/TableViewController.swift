@@ -9,6 +9,13 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+      var toDos : [ToDo] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        toDos = createToDos()
+    }
     
     func createToDos() -> [ToDo] {
         
@@ -23,20 +30,14 @@ class TableViewController: UITableViewController {
         return [swift, dog]
     }
     
-    var toDos : [ToDo] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        toDos = createToDos()
-    }
+  
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -64,6 +65,10 @@ class TableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let addVC = segue.destination as? AddToDoViewController {
+            addVC.previousVC = self
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
