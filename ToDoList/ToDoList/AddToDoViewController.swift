@@ -14,7 +14,7 @@ import UIKit
 
 class AddToDoViewController: UIViewController {
     
-    var previousVC = TableViewController()
+    var previousVC = ToDoTableViewController()
     
     
     @IBOutlet weak var titleTextField: UITextField!
